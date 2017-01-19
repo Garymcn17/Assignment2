@@ -1,11 +1,11 @@
+PVector PlayerPos;
 class Player
 {
-  PVector pos;
   PVector forward;
   PVector velocity;
   PVector accel;
   PVector force;
-  float power = 100;
+  float power = 120;
   float theta;
   float size;
   float radius;
@@ -15,7 +15,7 @@ class Player
   
   Player(float x, float y, float theta, float size)
   {
-    pos = new PVector(x, y);
+    PlayerPos = new PVector(x, y);
     forward = new PVector(0, -1);
     accel = new PVector(0,0);
     velocity = new PVector(0,0);
@@ -50,7 +50,7 @@ class Player
   void render()
   {
     pushMatrix(); // Stores the current transform
-    translate(pos.x, pos.y);
+    translate(PlayerPos.x, PlayerPos.y);
     rotate(theta);    
     shape(shape, 0, 0);
     popMatrix(); // Restore the transform
@@ -80,7 +80,7 @@ class Player
     
     accel = PVector.div(force, mass);
     velocity.add(PVector.mult(accel, timeDelta));
-    pos.add(PVector.mult(velocity, timeDelta));
+    PlayerPos.add(PVector.mult(velocity, timeDelta));
     force.x = force.y = 0;
     velocity.mult(0.99f);
     

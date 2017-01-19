@@ -6,7 +6,7 @@ void setup()
 {
   fullScreen();
   player = new Player(width / 2, height / 2, 0, 50);
-  enemy = new Enemy(width/2, height/2);
+  enemy = new Enemy(width -60, height -60);
 }
 
 void Background()
@@ -22,6 +22,7 @@ void draw()
   player.render();
   
   enemy.render();
+  enemy.update();
 }
 
 void keyPressed()

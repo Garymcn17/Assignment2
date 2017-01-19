@@ -7,7 +7,7 @@ class Enemy
   
   float x;
   float y;
-  float easing = 0.05;
+  float easing = 0.01;
   
   
   Enemy(float x, float y)
@@ -36,12 +36,20 @@ class Enemy
   void render()
   {
     pushMatrix(); // Stores the current transform
-    shape(shape, width -radius - forPos, height -radius - forPos);
+    translate(pos.x, pos.y);
+    shape(shape, 0,0);
     popMatrix(); // Restore the transform
   }
   
   void update()
   {
+    float targetX = PlayerPos.x;
+    float dx = targetX - pos.x;
+    pos.x += dx * easing;
+  
+    float targetY = PlayerPos.y;
+    float dy = targetY - pos.y;
+    pos.y += dy * easing;
     
   }
   
