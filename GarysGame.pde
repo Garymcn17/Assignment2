@@ -1,11 +1,12 @@
 Player player;
+Enemy enemy;
 float timeDelta = 1.0f / 60.0f;
 boolean[] keys = new boolean[1000];
 void setup()
 {
   fullScreen();
   player = new Player(width / 2, height / 2, 0, 50);
-  
+  enemy = new Enemy(width -50, height - 50);
 }
 
 void Background()
@@ -19,6 +20,8 @@ void draw()
   Background();
   player.update();
   player.render();
+  
+  enemy.render();
 }
 
 void keyPressed()

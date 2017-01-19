@@ -17,13 +17,21 @@ class Enemy
     shape = createShape();
     shape.beginShape();
     shape.stroke(255);
+    shape.setFill(color(#47E0FC));
     shape.noFill();
     shape.strokeWeight(2);
-    shape.vertex(-radius, radius);
-    shape.vertex(0, - radius);
-    shape.vertex(radius, radius);
-    shape.vertex(0, 0);
+    shape.vertex(-radius, 0);
+    shape.vertex(0, - radius/2);
+    shape.vertex(radius, 0);
+    shape.vertex(0, + radius/2);
     shape.endShape(CLOSE);
+  }
+  
+  void render()
+  {
+    pushMatrix(); // Stores the current transform
+    shape(shape, 0, 0);
+    popMatrix(); // Restore the transform
   }
   
   
