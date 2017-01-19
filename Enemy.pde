@@ -2,7 +2,12 @@ class Enemy
 {
   PVector pos;
   PShape shape;
-  float radius = 100;
+  float radius = 50;
+  float forPos =10;
+  
+  float x;
+  float y;
+  float easing = 0.05;
   
   
   Enemy(float x, float y)
@@ -14,10 +19,11 @@ class Enemy
   
   void create()
   {
+    
     shape = createShape();
+    shape.setFill(color(#47E0FC));
     shape.beginShape();
     shape.stroke(255);
-    shape.setFill(color(#47E0FC));
     shape.noFill();
     shape.strokeWeight(2);
     shape.vertex(-radius, 0);
@@ -30,8 +36,13 @@ class Enemy
   void render()
   {
     pushMatrix(); // Stores the current transform
-    shape(shape, 0, 0);
+    shape(shape, width -radius - forPos, height -radius - forPos);
     popMatrix(); // Restore the transform
+  }
+  
+  void update()
+  {
+    
   }
   
   

@@ -6,7 +6,7 @@ void setup()
 {
   fullScreen();
   player = new Player(width / 2, height / 2, 0, 50);
-  enemy = new Enemy(width -50, height - 50);
+  enemy = new Enemy(width/2, height/2);
 }
 
 void Background()
