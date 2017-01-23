@@ -1,10 +1,10 @@
+
 class Enemy
 {
   PVector pos;
   PShape shape;
   float radius = 50;
   float forPos =10;
-  
   float x;
   float y;
   float easing = 0.01;
@@ -52,6 +52,14 @@ class Enemy
     pos.y += dy * easing;
     
   }
+  
+  void death()
+{
+  if(pos.x+50 == PlayerPos.x && pos.y+50 == PlayerPos.y)
+  {
+    Life = 0;
+  }
+}
   
   
 }

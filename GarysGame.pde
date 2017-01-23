@@ -1,12 +1,13 @@
 Player player;
-Enemy enemy;
 float timeDelta = 1.0f / 60.0f;
 boolean[] keys = new boolean[1000];
+ArrayList<Enemy> enemys = new ArrayList<Enemy>();
+int enemies = 1;
 void setup()
 {
   fullScreen();
   player = new Player(width / 2, height / 2, 0, 50);
-  enemy = new Enemy(width -60, height -60);
+
 }
 
 void Background()
@@ -17,22 +18,42 @@ void Background()
   rect(10,10,width-20, height-20);
 }
 
+void enemys()
+{
+  for( i = 0; i < enemies; i++)
+  {
+    Enemy diamond = new Enemy(width - random(60,120), height -random(60,120));
+    enemys.add(diamond);
+  }
+}
 
+
+int i;
 void draw()
 {
   Background();
-  if( Life == 0);
-  {
-    
-  }
-  else
+  enemy.death();
+  
+  if( Life == 1)
   {
     player.update();
     player.render();
   }
-  
-  enemy.render();
-  enemy.update();
+  else 
+  {
+    fill(#D10F3F);
+    rect(50,50,50,50);
+  }
+
+if(frameCount % 120 ==0)
+{
+  enemys();
+} 
+  for( Enemy enemy : enemys)
+  {
+   enemy.render();
+   enemy.update();
+  }
 }
 
 void keyPressed()
