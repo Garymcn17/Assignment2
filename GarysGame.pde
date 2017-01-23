@@ -12,14 +12,24 @@ void setup()
 void Background()
 {
   background(0,0);
+  fill(0);
+  stroke(#0DBEFC);
+  rect(10,10,width-20, height-20);
 }
 
 
 void draw()
 {
   Background();
-  player.update();
-  player.render();
+  if( Life == 0);
+  {
+    
+  }
+  else
+  {
+    player.update();
+    player.render();
+  }
   
   enemy.render();
   enemy.update();

@@ -1,4 +1,5 @@
 PVector PlayerPos;
+int Life = 1;
 class Player
 {
   PVector forward;
