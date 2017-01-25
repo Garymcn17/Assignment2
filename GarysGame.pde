@@ -45,9 +45,10 @@ void draw()
   {
     fill(#D10F3F);
     rect(50,50,50,50);
+    noFill();
   }
 
-if(frameCount % 120 ==0)
+if(frameCount % 180 ==0)
 {
   enemys();
 } 
