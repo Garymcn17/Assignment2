@@ -24,7 +24,9 @@ void enemys()
   for( i = 0; i < enemies; i++)
   {
     Enemy diamond = new Enemy(width - random(60,120), height -random(60,120));
+    Enemy diamond1 = new Enemy(width - random(60,120), 0 +random(60,120));
     enemys.add(diamond);
+    enemys.add(diamond1);
   }
 }
 
@@ -53,10 +55,6 @@ if(frameCount % 120 ==0)
   {
    enemy.render();
    enemy.update();
-   if(enemy.shape == player.shape)
-    {
-      Life = 0;
-    }
   }
 }
 

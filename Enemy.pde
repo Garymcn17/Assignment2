@@ -39,8 +39,11 @@ class Enemy
     popMatrix(); // Restore the transform
   }
   
+  float targetX, targetY;
   void update()
   {
+    if (targetX - pos.x >0 && targetY - pos.y <0)
+    {
     float targetX = PlayerPos.x;
     float dx = targetX - pos.x;
     pos.x += dx * easing;
@@ -48,6 +51,11 @@ class Enemy
     float targetY = PlayerPos.y;
     float dy = targetY - pos.y;
     pos.y += dy * easing;
-    
+    }
+    else
+    {
+   
+       Life = 0;
+    }
   }
 }

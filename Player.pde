@@ -24,10 +24,6 @@ class Player
     this.theta = theta;
     this.size = size;
     radius = size / 2;
-    //this.up = UP;
-    //this.down = DOWN;
-    //this.left = LEFT;
-    //this.right =RIGHT;
     
     create();
     
