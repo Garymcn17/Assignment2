@@ -1,4 +1,5 @@
 Player player;
+Enemy death;
 float timeDelta = 1.0f / 60.0f;
 boolean[] keys = new boolean[1000];
 ArrayList<Enemy> enemys = new ArrayList<Enemy>();
@@ -32,7 +33,6 @@ int i;
 void draw()
 {
   Background();
-  enemy.death();
   
   if( Life == 1)
   {
@@ -53,6 +53,10 @@ if(frameCount % 120 ==0)
   {
    enemy.render();
    enemy.update();
+   if(enemy.shape == player.shape)
+    {
+      Life = 0;
+    }
   }
 }
 

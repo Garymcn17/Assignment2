@@ -1,6 +1,6 @@
 PVector PlayerPos;
 int Life = 1;
-class Player
+class Player 
 {
   PVector forward;
   PVector velocity;
@@ -84,8 +84,6 @@ class Player
     PlayerPos.add(PVector.mult(velocity, timeDelta));
     force.x = force.y = 0;
     velocity.mult(0.99f);
-    
-  
   }
-  
+    
 }
