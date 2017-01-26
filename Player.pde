@@ -6,7 +6,7 @@ class Player
   PVector velocity;
   PVector accel;
   PVector force;
-  float power = 120;
+  float power = 200;
   float theta;
   float size;
   float radius;

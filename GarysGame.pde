@@ -25,8 +25,13 @@ void enemys()
   {
     Enemy diamond = new Enemy(width - random(60,120), height -random(60,120));
     Enemy diamond1 = new Enemy(width - random(60,120), 0 +random(60,120));
+    Enemy diamond2 = new Enemy(0 + random(60,120), 0 +random(60,120));
+    Enemy diamond3 = new Enemy(0 + random(60,120), height - random(60,120));
     enemys.add(diamond);
     enemys.add(diamond1);
+    
+    enemys.add(diamond2);
+    enemys.add(diamond3);
   }
 }
 
