@@ -1,3 +1,4 @@
+Gates gate;
 Player player;
 Enemy death;
 float timeDelta = 1.0f / 60.0f;
@@ -44,6 +45,15 @@ void enemys()
   }
 }
 
+void Gates()
+  {
+    
+    Gates gate = new Gates(random(width),random(height));
+    
+    gates.add(gate);
+    
+  }
+
 
 int i;
 void draw()
@@ -62,14 +72,20 @@ void draw()
     noFill();
   }
 
-if(frameCount % 180 ==0)
-{
-  enemys();
-} 
+  if(frameCount % 180 ==0)
+  {
+    enemys();
+    Gates();
+  } 
   for( Enemy enemy : enemys)
   {
    enemy.render();
    enemy.update();
+  }
+  
+  for(Gates gate : gates)
+  {
+    gate.render();
   }
 }
 

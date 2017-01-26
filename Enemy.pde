@@ -21,8 +21,8 @@ class Enemy
     
     shape = createShape();
     //shape.setFill(color(35,209,250));
-    shape.noFill();
     shape.beginShape();
+    shape.noFill();
     shape.stroke(35,209,250);
     shape.strokeWeight(2);
     shape.vertex(-radi, 0);
@@ -59,4 +59,6 @@ class Enemy
       pos.y += dy * easing;
     }
   }
+  
+
 }
