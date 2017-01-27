@@ -4,7 +4,6 @@ int gateLife = 1;
 class Gates
 {
   PVector GatePos;
-  PShape shape;
   float radi =30;
   
   Gates(float x, float y, int radi)
@@ -16,7 +15,7 @@ class Gates
   
   void create()
   {
-    PShape body = createShape(ELLIPSE, 0,0 ,50,50);
+    PShape shape = createShape(ELLIPSE, 0,0 ,50,50);
   }
   
   void render()
