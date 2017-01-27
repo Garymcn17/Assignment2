@@ -1,15 +1,14 @@
 ArrayList<Gates> gates = new ArrayList<Gates>();
 int gateLife = 1;
+PVector GatePos;
 class Gates
 {
-  
-  PVector pos;
   PShape shape;
-  float radi = 50;
+  float radi =5;
   
-  Gates(float x, float y)
+  Gates(float x, float y, int radi)
   {
-    pos = new PVector(x,y);
+    GatePos = new PVector(x,y);
     
     create();
   }
@@ -28,12 +27,15 @@ class Gates
   
   void render()
   {
-    pushMatrix(); // Stores the current transform
-    translate(pos.x, pos.y);
-    shape(shape, 0,0);
-    popMatrix(); // Restore the transform
+  
+      pushMatrix(); // Stores the current transform
+      translate(GatePos.x, GatePos.y);
+      shape(shape, 0,0);
+      popMatrix(); // Restore the transform
   }
   
+
+
   
   
 }

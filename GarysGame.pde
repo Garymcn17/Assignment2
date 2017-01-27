@@ -6,6 +6,7 @@ boolean[] keys = new boolean[1000];
 ArrayList<Enemy> enemys = new ArrayList<Enemy>();
 int enemies = 1;
 Float release = 600.0;
+int GateCollision =5;
 void setup()
 {
   fullScreen();
@@ -45,14 +46,18 @@ void enemys()
   }
 }
 
-void Gates()
-  {
-    
-    Gates gate = new Gates(random(width),random(height));
+void GateArray()
+{
+    Gates gate = new Gates(random(width),random(height), 5);
     
     gates.add(gate);
     
-  }
+    if (dist(PlayerPos.x, PlayerPos.y, this.GatePos.x, this.GatePos.y) < GateCollision)
+    {
+      
+    }
+}
+
 
 
 int i;
@@ -72,11 +77,13 @@ void draw()
     noFill();
   }
 
-  if(frameCount % 180 ==0)
-  {
-    enemys();
-    Gates();
-  } 
+    if(frameCount % 180 ==0)
+    {
+      enemys();
+      GateArray();
+    } 
+    
+
   for( Enemy enemy : enemys)
   {
    enemy.render();
