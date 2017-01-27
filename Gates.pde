@@ -34,6 +34,14 @@ class Gates
       popMatrix(); // Restore the transform
   }
   
+  void update()
+  {
+    if (dist(PlayerPos.x, PlayerPos.y, this.GatePos.x, this.GatePos.y) < radius)
+    {
+      Life = 0;
+    }
+  }
+  
 
 
   

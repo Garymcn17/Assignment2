@@ -84,10 +84,15 @@ void draw()
     } 
     
 
-  for( Enemy enemy : enemys)
+
+  
+    int s = enemys.size();
+  for(int i = s -1; i >= 0 ; i--)
   {
-   enemy.render();
-   enemy.update();
+    Enemy die = enemys.get(i);
+   die.render();
+   die.update();
+    
   }
   
   for(Gates gate : gates)
