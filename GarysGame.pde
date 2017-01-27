@@ -51,11 +51,6 @@ void GateArray()
     Gates gate = new Gates(random(width),random(height), 5);
     
     gates.add(gate);
-    
-    if (dist(PlayerPos.x, PlayerPos.y, this.GatePos.x, this.GatePos.y) < GateCollision)
-    {
-      
-    }
 }
 
 
@@ -98,6 +93,7 @@ void draw()
   for(Gates gate : gates)
   {
     gate.render();
+    gate.update();
   }
 }
 

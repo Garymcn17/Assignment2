@@ -1,10 +1,11 @@
 ArrayList<Gates> gates = new ArrayList<Gates>();
 int gateLife = 1;
-PVector GatePos;
+
 class Gates
 {
+  PVector GatePos;
   PShape shape;
-  float radi =5;
+  float radi =30;
   
   Gates(float x, float y, int radi)
   {
@@ -15,19 +16,11 @@ class Gates
   
   void create()
   {
-    
-    shape = createShape();
-    shape.beginShape();
-    shape.stroke(35,209,250);
-    shape.strokeWeight(2);
-    shape.vertex(0, 0);
-    shape.vertex(180,random(-180,180));
-    shape.endShape(CLOSE);
+    PShape body = createShape(ELLIPSE, 0,0 ,50,50);
   }
   
   void render()
   {
-  
       pushMatrix(); // Stores the current transform
       translate(GatePos.x, GatePos.y);
       shape(shape, 0,0);
@@ -36,9 +29,10 @@ class Gates
   
   void update()
   {
-    if (dist(PlayerPos.x, PlayerPos.y, this.GatePos.x, this.GatePos.y) < radius)
+    if (dist(PlayerPos.x, PlayerPos.y, this.GatePos.x, this.GatePos.y) < radi)
     {
-      Life = 0;
+      fill(255,0,0);
+      ellipse(GatePos.x, GatePos.y, 50,50);
     }
   }
   
