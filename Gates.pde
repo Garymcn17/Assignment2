@@ -44,14 +44,7 @@ class Gates
     if (dist(PlayerPos.x, PlayerPos.y, this.GatePos.x, this.GatePos.y) < radi)
     {
       hit = true;
-      
-
     }
-
   }
-  
-
-
-  
   
 }

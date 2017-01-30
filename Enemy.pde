@@ -8,11 +8,10 @@ class Enemy
   float easing = 0.01;
   float radius = 45;
   
-  
   Enemy(float x, float y)
   {
     pos = new PVector(x,y);
-    
+
     create();
   }
   
@@ -43,7 +42,6 @@ class Enemy
   float targetX, targetY;
   void update()
   {
-    //if (targetX - pos.x < 0 && targetY - pos.y < 0)
     if (dist(PlayerPos.x, PlayerPos.y, this.pos.x, this.pos.y) < radius)
     {
       Life = 0;
