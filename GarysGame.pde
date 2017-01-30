@@ -7,6 +7,7 @@ ArrayList<Enemy> enemys = new ArrayList<Enemy>();
 int enemies = 1;
 Float release = 600.0;
 int GateCollision =5;
+int hit = 0;
 void setup()
 {
   fullScreen();
@@ -46,13 +47,11 @@ void enemys()
   }
 }
 
-void GateArray()
+void gates()
 {
-    Gates gate = new Gates(random(width),random(height), 5);
-    
+  Gates gate = new Gates(random(width),random(height), hit);
     gates.add(gate);
 }
-
 
 
 int i;
@@ -75,7 +74,7 @@ void draw()
     if(frameCount % 180 ==0)
     {
       enemys();
-      GateArray();
+      gates();
     } 
   
   int s = enemys.size();
@@ -87,13 +86,13 @@ void draw()
     
   }
   
-  for(Gates gate : gates)
+  int g = gates.size();
+  for(int i = g -1; i >= 0 ; i--)
   {
-    if(gateHit == 0)
-    {
-      gate.render();
-      gate.update();
-    }
+    Gates spawnGate = gates.get(i);
+      spawnGate.render();
+      spawnGate.update();
+   
   }
 }
 

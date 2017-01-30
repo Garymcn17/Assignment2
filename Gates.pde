@@ -30,18 +30,13 @@ class Gates
   
   void update()
   {
+    
     if (dist(PlayerPos.x, PlayerPos.y, this.GatePos.x, this.GatePos.y) < radi)
     {
-      for(int i = 0; i <120; i++)
-      {
-        size ++;
-      }
-      
+
+      gates.remove(this);
     }
-    else
-    {
-       size = 50; 
-    }
+
   }
   
 
