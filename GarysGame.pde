@@ -77,11 +77,8 @@ void draw()
       enemys();
       GateArray();
     } 
-    
-
-
   
-    int s = enemys.size();
+  int s = enemys.size();
   for(int i = s -1; i >= 0 ; i--)
   {
     Enemy die = enemys.get(i);
@@ -92,8 +89,11 @@ void draw()
   
   for(Gates gate : gates)
   {
-    gate.render();
-    gate.update();
+    if(gateHit == 0)
+    {
+      gate.render();
+      gate.update();
+    }
   }
 }
 

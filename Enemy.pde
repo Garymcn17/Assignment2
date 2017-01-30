@@ -6,7 +6,7 @@ class Enemy
   float radi = 50;
   float forPos =10;
   float easing = 0.01;
-  float radius = 40;
+  float radius = 45;
   
   
   Enemy(float x, float y)

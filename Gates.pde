@@ -1,21 +1,23 @@
 ArrayList<Gates> gates = new ArrayList<Gates>();
-int gateLife = 1;
-
 class Gates
 {
+  float size = 50;
   PVector GatePos;
+  PShape shape;
   float radi =30;
+  int gateHit = 0;
   
-  Gates(float x, float y, int radi)
+  Gates(float x, float y, int gateHit)
   {
     GatePos = new PVector(x,y);
+    this.gateHit = gateHit;
     
     create();
   }
   
   void create()
   {
-    PShape shape = createShape(ELLIPSE, 0,0 ,50,50);
+    shape = createShape(ELLIPSE, 0,0 ,size,size);
   }
   
   void render()
@@ -30,8 +32,15 @@ class Gates
   {
     if (dist(PlayerPos.x, PlayerPos.y, this.GatePos.x, this.GatePos.y) < radi)
     {
-      fill(255,0,0);
-      ellipse(GatePos.x, GatePos.y, 50,50);
+      for(int i = 0; i <120; i++)
+      {
+        size ++;
+      }
+      
+    }
+    else
+    {
+       size = 50; 
     }
   }
   
