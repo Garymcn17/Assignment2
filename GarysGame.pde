@@ -49,8 +49,8 @@ void enemys()
 
 void gates()
 {
-  Gates gate = new Gates(random(width),random(height), hit);
-    gates.add(gate);
+  Gates gate = new Gates(random(width),random(height), 50);
+  gates.add(gate);
 }
 
 
@@ -63,12 +63,6 @@ void draw()
   {
     player.update();
     player.render();
-  }
-  else 
-  {
-    fill(#D10F3F);
-    rect(50,50,50,50);
-    noFill();
   }
 
     if(frameCount % 180 ==0)

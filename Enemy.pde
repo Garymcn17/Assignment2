@@ -58,11 +58,6 @@ class Enemy
       float dy = targetY - pos.y;
       pos.y += dy * easing;
     }
-    
-    //if (dist(PlayerPos.x, PlayerPos.y, this.pos.x, this.pos.y) < radius)
-    //{
-      //enemys.remove(this);
-    //}
   }
   
 
