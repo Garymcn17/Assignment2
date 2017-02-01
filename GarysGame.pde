@@ -1,4 +1,4 @@
-Gates gate;
+Gates gate = new Gates(random(width),random(height), 50, false);
 Player player;
 Enemy death;
 float timeDelta = 1.0f / 60.0f;
@@ -7,6 +7,7 @@ ArrayList<Enemy> enemys = new ArrayList<Enemy>();
 int enemies = 1;
 Float release = 600.0;
 float score = 2;
+
 void setup()
 {
   fullScreen();
@@ -46,8 +47,6 @@ void Game()
     
   }
   
-  Gates gate = new Gates(random(width),random(height), 50, false);
-  gates.add(gate);
   
 }
 
@@ -69,6 +68,8 @@ void draw()
   {
     player.update();
     player.render();
+      
+    
   }
 
     if(frameCount % 180 ==0)
@@ -76,6 +77,9 @@ void draw()
       Game();
       score += 2;
     } 
+    
+    gate.render();
+    gate.update();
   
   int s = enemys.size();
   for(int i = s -1; i >= 0 ; i--)
@@ -84,15 +88,6 @@ void draw()
    die.render();
    die.update();
     
-  }
-  
-  int g = gates.size();
-  for(int i = g -1; i >= 0 ; i--)
-  {
-    Gates spawnGate = gates.get(i);
-      spawnGate.render();
-      spawnGate.update();
-   
   }
 }
 

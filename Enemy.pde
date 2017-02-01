@@ -58,7 +58,7 @@ class Enemy
       pos.y += dy * easing;
     }
     
-    if (dist(v2.x, v2.y, this.pos.x, this.pos.y) < size2)
+    if (dist(GatePos.x, GatePos.y, this.pos.x, this.pos.y) < size2)
     {
           enemys.remove(this);
     }
