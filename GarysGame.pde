@@ -6,7 +6,7 @@ boolean[] keys = new boolean[1000];
 ArrayList<Enemy> enemys = new ArrayList<Enemy>();
 int enemies = 1;
 Float release = 600.0;
-int GateCollision =5;
+float score = 2;
 void setup()
 {
   fullScreen();
@@ -37,26 +37,34 @@ void Game()
     }
     if(frameCount > release*2)
     {
-    enemys.add(diamond2);
+      enemys.add(diamond2);
     }
     if(frameCount > release*3)
     {
-    enemys.add(diamond3);
+      enemys.add(diamond3);
     }
+    
   }
   
-  Gates gate = new Gates(random(width),random(height), 50);
+  Gates gate = new Gates(random(width),random(height), 50, false);
   gates.add(gate);
   
 }
 
+void Score()
+{
+  fill(255);
+  textSize(25);
+  text ("Score : " + int(score), 50, 50);
+  noFill();
+}
 
 
 int i;
 void draw()
 {
   Background();
-  
+  Score();
   if( Life == 1)
   {
     player.update();
@@ -66,6 +74,7 @@ void draw()
     if(frameCount % 180 ==0)
     {
       Game();
+      score += 2;
     } 
   
   int s = enemys.size();

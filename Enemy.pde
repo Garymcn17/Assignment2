@@ -58,14 +58,9 @@ class Enemy
       pos.y += dy * easing;
     }
     
-    //float d = PVector.dist(v3, v2);
-    
     if (dist(v2.x, v2.y, this.pos.x, this.pos.y) < size2)
     {
-       if(hit == true)
-       {
           enemys.remove(this);
-       }
     }
   }
   

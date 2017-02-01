@@ -1,9 +1,10 @@
 ArrayList<Gates> gates = new ArrayList<Gates>();
 PVector v2;
 float size2;
- Boolean hit, hit1 = false;
+
 class Gates
 {
+  Boolean hit;
   float size = 50;
   PVector GatePos;
   PShape shape;
@@ -11,12 +12,13 @@ class Gates
   int gateHit = 0;
  
   
-  Gates(float x, float y,float size)
+  Gates(float x, float y,float size, boolean hit)
   {
     GatePos = new PVector(x,y);
     v2 = new PVector(x,y);
     v2 = GatePos.copy();
     this.size = size;
+    this.hit = false;
     //create();
   }
   
@@ -36,25 +38,23 @@ class Gates
   
   void update()
   {
-    if(size < 200 && hit1 == true)
+
+    if(this.size < 200 && this.hit == true)
       {
-        size++;
+        this.size++;
         size2++;
       }
       else if( size >= 200)
       {
         gates.remove(this);
       }
+  
       
-    if (dist(PlayerPos.x, PlayerPos.y, this.GatePos.x, this.GatePos.y) < radi)
+    if (dist(PlayerPos.x, PlayerPos.y, GatePos.x, GatePos.y) < radi)
     {
-      hit = true;
-      hit1 = true;
+      this.hit = true;
     }
-    else
-    {
-      hit = false; 
-    }
+    
   }
   
 }
