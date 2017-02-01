@@ -22,7 +22,7 @@ void Background()
   rect(10,10,width-20, height-20);
 }
 
-void enemys()
+void Game()
 {
   for( i = 0; i < enemies; i++)
   {
@@ -45,13 +45,12 @@ void enemys()
     enemys.add(diamond3);
     }
   }
-}
-
-void gates()
-{
+  
   Gates gate = new Gates(random(width),random(height), 50);
   gates.add(gate);
+  
 }
+
 
 
 int i;
@@ -67,8 +66,7 @@ void draw()
 
     if(frameCount % 180 ==0)
     {
-      enemys();
-      gates();
+      Game();
     } 
   
   int s = enemys.size();

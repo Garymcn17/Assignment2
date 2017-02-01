@@ -1,4 +1,6 @@
 ArrayList<Gates> gates = new ArrayList<Gates>();
+PVector v2;
+float size2;
 class Gates
 {
   float size = 50;
@@ -11,16 +13,18 @@ class Gates
   Gates(float x, float y,float size)
   {
     GatePos = new PVector(x,y);
+    v2 = new PVector(x,y);
+    v2 = GatePos.copy();
     this.size = size;
-    create();
+    //create();
     hit = false;
   }
   
-  void create()
+ /* void create()
   {
     //shape = createShape(ELLIPSE, 0,0 ,size,size);
   }
-  
+ */
   void render()
   {
       pushMatrix(); // Stores the current transform
@@ -35,6 +39,7 @@ class Gates
     if(size < 200 && hit == true)
       {
         size++;
+        size2++;
       }
       else if( size >= 200)
       {

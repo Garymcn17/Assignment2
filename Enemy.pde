@@ -1,4 +1,4 @@
-
+PVector v3;
 class Enemy
 {
   PVector pos;
@@ -11,7 +11,8 @@ class Enemy
   Enemy(float x, float y)
   {
     pos = new PVector(x,y);
-
+    v3 = new PVector(x,y);
+    v3 = pos.copy();
     create();
   }
   
@@ -55,6 +56,16 @@ class Enemy
       targetY = PlayerPos.y;
       float dy = targetY - pos.y;
       pos.y += dy * easing;
+    }
+    
+    //float d = PVector.dist(v3, v2);
+    
+    if (dist(v2.x, v2.y, this.pos.x, this.pos.y) < size2)
+    {
+       if(hit == true)
+       {
+          enemys.remove(this);
+       }
     }
   }
   
