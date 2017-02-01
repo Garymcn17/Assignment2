@@ -1,6 +1,7 @@
 ArrayList<Gates> gates = new ArrayList<Gates>();
 PVector v2;
 float size2;
+ Boolean hit, hit1 = false;
 class Gates
 {
   float size = 50;
@@ -8,7 +9,7 @@ class Gates
   PShape shape;
   float radi =30;
   int gateHit = 0;
-  Boolean hit;
+ 
   
   Gates(float x, float y,float size)
   {
@@ -17,7 +18,6 @@ class Gates
     v2 = GatePos.copy();
     this.size = size;
     //create();
-    hit = false;
   }
   
  /* void create()
@@ -36,7 +36,7 @@ class Gates
   
   void update()
   {
-    if(size < 200 && hit == true)
+    if(size < 200 && hit1 == true)
       {
         size++;
         size2++;
@@ -49,6 +49,11 @@ class Gates
     if (dist(PlayerPos.x, PlayerPos.y, this.GatePos.x, this.GatePos.y) < radi)
     {
       hit = true;
+      hit1 = true;
+    }
+    else
+    {
+      hit = false; 
     }
   }
   

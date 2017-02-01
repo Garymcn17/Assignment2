@@ -7,7 +7,6 @@ ArrayList<Enemy> enemys = new ArrayList<Enemy>();
 int enemies = 1;
 Float release = 600.0;
 int GateCollision =5;
-int hit = 0;
 void setup()
 {
   fullScreen();
