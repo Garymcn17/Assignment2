@@ -1,20 +1,19 @@
 PVector GatePos;
 float size2;
-class Gates
+class Gates extends GameObject
 {
-  Boolean hit;
+  Boolean hit = false;
   float size = 50;
   PShape shape;
   float radi =30;
   int gateHit = 0;
  
   
-  Gates(float x, float y,float size, boolean hit)
+  Gates(float x, float y,float size)
   {
     GatePos = new PVector(x,y);
     
     this.size = size;
-    this.hit = false;
     //create();
   }
   
@@ -35,20 +34,22 @@ class Gates
   void update()
   {
 
-    if(this.size < 200 && this.hit == true)
+    if(size < 200 && hit == true)
       {
-        this.size++;
+        size++;
         size2 = size;
       }
-      else if( size >= 200)
+      else if( size > 200)
       {
-        
+        Objects.remove(gate);
+        hit = false;
+        size = 50;
       }
   
       
-    if (dist(PlayerPos.x, PlayerPos.y, GatePos.x, GatePos.y) < radi)
+    if (dist( GatePos.x, GatePos.y, PlayerPos.x, PlayerPos.y) < radi)
     {
-      this.hit = true;
+      hit = true;
     }
     
   }

@@ -1,17 +1,17 @@
-Gates gate = new Gates(random(width),random(height), 50, false);
 Player player;
 Enemy death;
 float timeDelta = 1.0f / 60.0f;
 boolean[] keys = new boolean[1000];
-ArrayList<Enemy> enemys = new ArrayList<Enemy>();
+ArrayList<GameObject> Objects = new ArrayList<GameObject>();
 int enemies = 1;
 Float release = 600.0;
 float score = 2;
-
+Gates gate;
 void setup()
 {
   fullScreen();
   player = new Player(width / 2, height / 2, 0, 50);
+  
 }
 
 void Background()
@@ -31,23 +31,25 @@ void Game()
     Enemy diamond2 = new Enemy(0 + random(60,120), 0 +random(60,120));
     Enemy diamond3 = new Enemy(0 + random(60,120), height - random(60,120));
     
-    enemys.add(diamond);
+    Objects.add(diamond);
     if(frameCount > release)
     {
-       enemys.add(diamond1);
+       Objects.add(diamond1);
     }
     if(frameCount > release*2)
     {
-      enemys.add(diamond2);
+      Objects.add(diamond2);
     }
     if(frameCount > release*3)
     {
-      enemys.add(diamond3);
-    }
-    
+      Objects.add(diamond3);
+    } 
   }
   
-  
+   
+      gate = new Gates(random(width),random(height), 50);
+      Objects.add(gate);
+    
 }
 
 void Score()
@@ -72,19 +74,24 @@ void draw()
     
   }
 
-    if(frameCount % 180 ==0)
+    if(frameCount % 300 ==0)
     {
       Game();
       score += 2;
     } 
     
-    gate.render();
-    gate.update();
+  int p = Objects.size();
+  for(int i = p -1; i >= 0 ; i--)
+  {
+       GameObject gate = Objects.get(i);
+       gate.render();
+       gate.update();
+  }
   
-  int s = enemys.size();
+  int s = Objects.size();
   for(int i = s -1; i >= 0 ; i--)
   {
-    Enemy die = enemys.get(i);
+   GameObject die = Objects.get(i);
    die.render();
    die.update();
     

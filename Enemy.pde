@@ -1,5 +1,5 @@
 PVector v3;
-class Enemy
+class Enemy extends GameObject
 {
   PVector pos;
   PShape shape;
@@ -60,7 +60,7 @@ class Enemy
     
     if (dist(GatePos.x, GatePos.y, this.pos.x, this.pos.y) < size2)
     {
-          enemys.remove(this);
+          Objects.remove(this);
     }
   }
   
