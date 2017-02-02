@@ -6,10 +6,10 @@ ArrayList<GameObject> Objects = new ArrayList<GameObject>();
 int enemies = 1;
 Float release = 600.0;
 float score = 2;
-Gates gate;
+//Gates gate;
 void setup()
 {
-  fullScreen();
+  size(1000,1000);
   player = new Player(width / 2, height / 2, 0, 50);
   
 }
@@ -47,7 +47,7 @@ void Game()
   }
   
    
-      gate = new Gates(random(width),random(height), 50);
+      Gates gate = new Gates(random(width),random(height), 50);
       Objects.add(gate);
     
 }

@@ -14,6 +14,7 @@ class Gates extends GameObject
     GatePos = new PVector(x,y);
     
     this.size = size;
+       size = 50;
     //create();
   }
   
@@ -33,25 +34,28 @@ class Gates extends GameObject
   
   void update()
   {
-
-    if(size < 200 && hit == true)
-      {
-        size++;
+    if(this.size < 200 && hit == true)
+    {
+        this.size++;
         size2 = size;
-      }
-      else if( size > 200)
-      {
-        Objects.remove(gate);
-        hit = false;
-        size = 50;
-      }
+   
+    }
+    println(size);
+   
+   if( this.size >= 200)
+    {
+         println("SSS");
+      hit = false;
+      size = 50;
+      Objects.remove(this);
+      println(GatePos.x, GatePos.y);
+    }
   
       
-    if (dist( GatePos.x, GatePos.y, PlayerPos.x, PlayerPos.y) < radi)
+    if (dist( GatePos.x, GatePos.y, PlayerPos.x, PlayerPos.y) < size)
     {
+      
       hit = true;
     }
-    
   }
-  
 }
