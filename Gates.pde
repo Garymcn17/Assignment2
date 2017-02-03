@@ -28,6 +28,7 @@ class Gates extends GameObject
       pushMatrix(); // Stores the current transform
       translate(GatePos.x, GatePos.y);
       //shape(shape, 0,0);
+      stroke(#0DBEFC,255);
       ellipse(0,0,size,size);
       popMatrix(); // Restore the transform
   }

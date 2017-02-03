@@ -18,8 +18,24 @@ void Background()
 {
   background(0,0);
   fill(0);
+  strokeWeight(3);
   stroke(#0DBEFC);
   rect(10,10,width-20, height-20);
+  int add = 10;
+  float add2 = 10;
+  for (int i = 0; i< 21; i++)
+  {
+    stroke(#0DBEFC,50);
+     line(10, add, width -10, add);
+     add +=51;
+  }
+  
+  for (int i = 0; i< 44; i++)
+  {
+    stroke(#0DBEFC,50);
+    line(add2, 10, add2, height -10);
+    add2 +=51;
+  }
 }
 
 void Game()
