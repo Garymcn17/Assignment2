@@ -9,7 +9,7 @@ float score = 2;
 //Gates gate;
 void setup()
 {
-  size(1000,1000);
+  fullScreen();
   player = new Player(width / 2, height / 2, 0, 50);
   
 }

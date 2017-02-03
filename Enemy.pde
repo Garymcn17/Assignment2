@@ -1,7 +1,6 @@
 PVector v3;
 class Enemy extends GameObject
 {
-  PVector pos;
   PShape shape;
   float radi = 50;
   float forPos =10;
@@ -43,7 +42,7 @@ class Enemy extends GameObject
   float targetX, targetY;
   void update()
   {
-    if (dist(PlayerPos.x, PlayerPos.y, this.pos.x, this.pos.y) < radius)
+    if (dist(PlayerPos.x, PlayerPos.y, this.pos.x, this.pos.y) < size2)
     {
       Life = 0;
     }
@@ -60,6 +59,7 @@ class Enemy extends GameObject
     
     if (dist(GatePos.x, GatePos.y, this.pos.x, this.pos.y) < size2)
     {
+      //Code to delete the enemies from the screen if they come within the radius of the gate explosion.
           Objects.remove(this);
     }
   }
