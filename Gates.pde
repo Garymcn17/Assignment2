@@ -51,12 +51,14 @@ class Gates extends GameObject
       size2 = 50;
       //Code to remove the gate from the screeen once its explosion reaches over 200
       Objects.remove(this);
+      score +=10;
       println(GatePos.x, GatePos.y);
     }
   
       
     if (dist( GatePos.x, GatePos.y, PlayerPos.x, PlayerPos.y) < size)
     {
+      
       hit = true;
     }
   }

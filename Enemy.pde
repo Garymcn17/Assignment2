@@ -61,6 +61,7 @@ class Enemy extends GameObject
     {
       //Code to delete the enemies from the screen if they come within the radius of the gate explosion.
           Objects.remove(this);
+          score += 100;
     }
   }
   
