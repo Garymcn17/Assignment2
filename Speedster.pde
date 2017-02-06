@@ -7,7 +7,7 @@ class Speedster extends Enemy
     v3 = new PVector(x,y);
     v3 = pos.copy();
     create();
-    this.speed = 1.5;
+    this.speed = 1.25;
   }
   
   void create()

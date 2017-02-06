@@ -91,8 +91,16 @@ void gate()
 {
   Gates gate = new NormalGate(random(width),random(height), 50);
   Gates gate1 = new SuperGate(random(width),random(height), 50);
-  Objects.add(gate);
-  Objects.add(gate1);
+  float change = random(10);
+  
+  if( change < 7 )
+  {
+    Objects.add(gate);
+  }
+  else
+  {
+    Objects.add(gate1);
+  }
 }
 
 void Score()
@@ -138,9 +146,9 @@ void draw()
       int p = Objects.size();
       for(int i = p -1; i >= 0 ; i--)
       {
-           GameObject gate = Objects.get(i);
-           gate.render();
-           gate.update();
+           GameObject go = Objects.get(i);
+           go.render();
+           go.update();
       }
       
       int s = Objects.size();

@@ -15,7 +15,7 @@ class SuperGate extends Gates
       pushMatrix(); // Stores the current transform
       translate(GatePos.x, GatePos.y);
       //shape(shape, 0,0);
-      stroke(#89FF24,255);
+      stroke(#89FF24);
       ellipse(0,0,size,size);
       popMatrix(); // Restore the transform
   }
