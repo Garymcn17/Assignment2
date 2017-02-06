@@ -1,13 +1,13 @@
-class Enemy2 extends Enemy
+class Speedster extends Enemy
 {
- 
-  Enemy2(float x, float y)
+  
+  Speedster(float x, float y)
   {
     pos = new PVector(x,y);
     v3 = new PVector(x,y);
     v3 = pos.copy();
     create();
-    speed = 1;
+    this.speed = 1.5;
   }
   
   void create()
@@ -17,7 +17,7 @@ class Enemy2 extends Enemy
     //shape.setFill(color(35,209,250));
     shape.beginShape();
     shape.noFill();
-    shape.stroke(35,209,250);
+    shape.stroke(#E500FF);
     shape.strokeWeight(2);
     shape.vertex(-radi, 0);
     shape.vertex(0, - radi/2);

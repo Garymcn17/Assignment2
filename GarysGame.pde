@@ -7,13 +7,14 @@ ArrayList<GameObject> Objects = new ArrayList<GameObject>();
 int enemies = 1;
 Float release = 600.0;
 float score = 2;
-//Gates gate;
+PrintWriter output;
 void setup()
 {
   fullScreen();
   frameRate(120);
   player = new Player(width / 2, height / 2, 0, 50);
   Load = new Loading();
+  output = createWriter("Leaderboard.txt");
 }
 
 void Background()
@@ -55,11 +56,14 @@ void Game()
 {
   for( i = 0; i < enemies; i++)
   {
-    Enemy diamond = new Enemy(width - random(60,120), height -random(60,120));
-    Enemy diamond1 = new Enemy(width - random(60,120), 0 +random(60,120));
-    Enemy diamond2 = new Enemy(0 + random(60,120), 0 +random(60,120));
-    Enemy diamond3 = new Enemy(0 + random(60,120), height - random(60,120));
-    
+    Enemy diamond = new Enemy2(width - random(60,120), height -random(60,120));
+    Enemy diamond1 = new Enemy2(width - random(60,120), 0 +random(60,120));
+    Enemy diamond2 = new Enemy2(0 + random(60,120), 0 +random(60,120));
+    Enemy diamond3 = new Enemy2(0 + random(60,120), height - random(60,120));
+    Enemy Speedster = new Speedster(width - random(60,120), height -random(60,120));
+    Enemy Speedster1 = new Speedster(width - random(60,120), 0 +random(60,120));
+    Enemy Speedster2 = new Speedster(0 + random(60,120), 0 +random(60,120));
+    Enemy Speedster3 = new Speedster(0 + random(60,120), height - random(60,120));
     Objects.add(diamond);
     if(frameCount > release)
     {
@@ -73,12 +77,20 @@ void Game()
     {
       Objects.add(diamond3);
     } 
-  }
-  
-   
-      Gates gate = new Gates(random(width),random(height), 50);
-      Objects.add(gate);
-    
+     if(frameCount > release*4)
+    {
+      Objects.add(Speedster);
+      Objects.add(Speedster1);
+      Objects.add(Speedster2);
+      Objects.add(Speedster3);
+    }
+  } 
+}
+
+void gate()
+{
+  Gates gate = new Gates(random(width),random(height), 50);
+  Objects.add(gate);
 }
 
 void Score()
@@ -93,7 +105,6 @@ void Score()
 int i;
 void draw()
 {
-  
   Load.Switch();
   if( status == false)
   {
@@ -108,13 +119,17 @@ void draw()
       {
         player.update();
         player.render();
-          
-        
+        output.println(score);
+        output.flush();
+        output.close();
       }
+      
+     
     
         if(frameCount % 300 ==0)
         {
           Game();
+          gate();
           score += 2;
         } 
         
