@@ -1,8 +1,7 @@
-boolean status = false;
-class Loading
+class Exit
 {
   int fade = 255;
-  void Load()
+  void ExitScreen()
   {
       background(0);
       strokeWeight(3);
@@ -15,8 +14,10 @@ class Loading
       text("Gary's Game", width/2, height/2 -200);
       textAlign(CENTER);
       textSize(30);
+      fill(#0DBEFC);
+      text("You Scored :" + score, width/2, height/2 +200);
       fill(#0DBEFC, fade);
-      text("Press Space to play!!", width/2, height/2 +200);
+      text("Press X to Exit", width/2, height/2 +400);
       if(fade >= 0 )
       {
         fade = fade - 2;
@@ -27,18 +28,14 @@ class Loading
       }
   }
   
-  
     void Switch()
     {
       if(keyPressed)
       {
-        if( key == ' ' )
+        if( key == 'X' || key == 'x' )
         {
-          status = true;
+          exit();
         }
       }
     }
- 
-
-
 }
