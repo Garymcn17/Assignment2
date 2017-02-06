@@ -7,6 +7,11 @@ class Enemy extends GameObject
   float easing = 0.01;
   float radius = 45;
   
+  PVector pos;
+  PVector forward;
+  float speed = 1;
+  float theta = 0;
+  
   Enemy(float x, float y)
   {
     pos = new PVector(x,y);
@@ -48,6 +53,7 @@ class Enemy extends GameObject
     }
     else
     {
+      /*
       targetX = PlayerPos.x;
       float dx = targetX - pos.x;
       pos.x += dx * easing;
@@ -55,6 +61,11 @@ class Enemy extends GameObject
       targetY = PlayerPos.y;
       float dy = targetY - pos.y;
       pos.y += dy * easing;
+      */
+    theta = atan2(PlayerPos.y - pos.y, PlayerPos.x - pos.x) + HALF_PI;
+    forward = new PVector(sin(theta), -cos(theta));    
+    forward.normalize();
+    pos.add(PVector.mult(forward, speed));
     }
     
     if (dist(GatePos.x, GatePos.y, this.pos.x, this.pos.y) < size2)

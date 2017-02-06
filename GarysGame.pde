@@ -41,9 +41,9 @@ void Background()
   }
   */
   
-   for(int Xpos = 20; Xpos < width; Xpos += 100)
+   for(int Xpos = 20; Xpos < width; Xpos += 150)
     {
-      for(int Ypos = 20; Ypos < height; Ypos += 100)
+      for(int Ypos = 20; Ypos < height; Ypos += 150)
       {
         rect(Xpos, Ypos, 15 , 15); 
       }//end Ypos
