@@ -1,3 +1,6 @@
+import processing.sound.*;
+SoundFile Theme;
+
 Player player;
 Enemy death;
 Loading Load;
@@ -10,11 +13,14 @@ float score = 2;
 PrintWriter output;
 void setup()
 {
+  Theme = new SoundFile(this, "gwars-g4-deadline-loop.mp3");
+  Theme.play();
   fullScreen();
   frameRate(120);
   player = new Player(width / 2, height / 2, 0, 50);
   Load = new Loading();
   output = createWriter("Leaderboard.txt");
+
 }
 
 void Background()
