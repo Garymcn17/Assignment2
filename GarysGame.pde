@@ -1,5 +1,6 @@
 Player player;
 Enemy death;
+Loading Load;
 float timeDelta = 1.0f / 60.0f;
 boolean[] keys = new boolean[1000];
 ArrayList<GameObject> Objects = new ArrayList<GameObject>();
@@ -38,20 +39,7 @@ void Background()
     add2 +=51;
   }
 }
-
-void StartUP()
-{
-  
-  
-  background(0);
-  strokeWeight(3);
-  stroke(#0DBEFC);
-  rect(10,10,width-20, height-20);
-  fill(#0DBEFC);
-  textAlign(CENTER);
-  textSize(100);;
-  text("Gary's Game", width/2, height/2 -200);
-}
+int fade = 255;
 
 void Game()
 {
@@ -95,41 +83,48 @@ void Score()
 int i;
 void draw()
 {
-  
-  Background();
-  Score();
-  if( Life == 1)
+  Load.Switch();
+  if( status == false)
   {
-    player.update();
-    player.render();
+  }
+  
+  if(status == true)
+  {
+      Background();
+      Score();
+      if( Life == 1)
+      {
+        player.update();
+        player.render();
+          
+        
+      }
+    
+        if(frameCount % 300 ==0)
+        {
+          Game();
+          score += 2;
+        } 
+        
+      int p = Objects.size();
+      for(int i = p -1; i >= 0 ; i--)
+      {
+           GameObject gate = Objects.get(i);
+           gate.render();
+           gate.update();
+      }
       
-    
-  }
-
-    if(frameCount % 300 ==0)
-    {
-      Game();
-      score += 2;
-    } 
-    
-  int p = Objects.size();
-  for(int i = p -1; i >= 0 ; i--)
-  {
-       GameObject gate = Objects.get(i);
-       gate.render();
-       gate.update();
+      int s = Objects.size();
+      for(int i = s -1; i >= 0 ; i--)
+      {
+       GameObject die = Objects.get(i);
+       die.render();
+       die.update();
+        
+      }
   }
   
-  int s = Objects.size();
-  for(int i = s -1; i >= 0 ; i--)
-  {
-   GameObject die = Objects.get(i);
-   die.render();
-   die.update();
-    
-  }
   
-  StartUP();
 }
 
 void keyPressed()
