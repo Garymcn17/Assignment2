@@ -7,11 +7,7 @@ class Gates extends GameObject
   PShape shape;
   float radi =30;
   int gateHit = 0;
- /* void create()
-  {
-    //shape = createShape(ELLIPSE, 0,0 ,size,size);
-  }
- */
+
   void render()
   {
     

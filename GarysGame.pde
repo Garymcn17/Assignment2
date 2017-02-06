@@ -89,18 +89,8 @@ void Game()
 
 void gate()
 {
-  Gates gate = new NormalGate(random(width),random(height), 50);
-  Gates gate1 = new SuperGate(random(width),random(height), 50);
-  float change = random(10);
-  
-  if( change < 7 )
-  {
-    Objects.add(gate);
-  }
-  else
-  {
-    Objects.add(gate1);
-  }
+  Gates gate = new NormalGate(random(width-300),random(height-150), 50); 
+  Objects.add(gate);
 }
 
 void Score()

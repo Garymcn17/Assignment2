@@ -37,9 +37,9 @@ class Player
     shape.noFill();
     shape.strokeWeight(2);
     shape.vertex(-radius, radius);
-    shape.vertex(0, - radius);
     shape.vertex(radius, radius);
     shape.vertex(0, 0);
+    
     shape.endShape(CLOSE);
   }
   
@@ -76,10 +76,10 @@ class Player
     }
     
     accel = PVector.div(force, mass);
-    velocity.add(PVector.mult(accel, timeDelta));
+    velocity.add(PVector.mult(accel, .030));
     PlayerPos.add(PVector.mult(velocity, timeDelta));
     force.x = force.y = 0;
-    velocity.mult(0.99f);
+    velocity.mult(.99f);
   }
     
 }
