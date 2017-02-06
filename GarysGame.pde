@@ -10,6 +10,7 @@ float score = 2;
 void setup()
 {
   fullScreen();
+  frameRate(120);
   player = new Player(width / 2, height / 2, 0, 50);
   
 }

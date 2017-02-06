@@ -41,7 +41,6 @@ class Gates extends GameObject
         size2 = size;
    
     }
-    println(size);
    
    if( size >= 200)
     {
