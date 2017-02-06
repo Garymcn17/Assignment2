@@ -39,6 +39,20 @@ void Background()
   }
 }
 
+void StartUP()
+{
+  
+  
+  background(0);
+  strokeWeight(3);
+  stroke(#0DBEFC);
+  rect(10,10,width-20, height-20);
+  fill(#0DBEFC);
+  textAlign(CENTER);
+  textSize(100);;
+  text("Gary's Game", width/2, height/2 -200);
+}
+
 void Game()
 {
   for( i = 0; i < enemies; i++)
@@ -81,6 +95,7 @@ void Score()
 int i;
 void draw()
 {
+  
   Background();
   Score();
   if( Life == 1)
@@ -113,6 +128,8 @@ void draw()
    die.update();
     
   }
+  
+  StartUP();
 }
 
 void keyPressed()
