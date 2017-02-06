@@ -42,7 +42,7 @@ class Enemy extends GameObject
   float targetX, targetY;
   void update()
   {
-    if (dist(PlayerPos.x, PlayerPos.y, this.pos.x, this.pos.y) < size2)
+    if (dist(PlayerPos.x, PlayerPos.y, this.pos.x, this.pos.y) < 50)
     {
       Life = 0;
     }

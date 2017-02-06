@@ -49,7 +49,7 @@ void Background()
       }//end Ypos
     }//end Xpos
 }
-int fade = 255;
+
 
 void Game()
 {
@@ -93,9 +93,11 @@ void Score()
 int i;
 void draw()
 {
+  
   Load.Switch();
   if( status == false)
   {
+    Load.Load();
   }
   
   if(status == true)
