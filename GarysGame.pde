@@ -13,19 +13,20 @@ void setup()
   fullScreen();
   frameRate(120);
   player = new Player(width / 2, height / 2, 0, 50);
-  
+  Load = new Loading();
 }
 
 void Background()
 {
-  background(0,0);
+  background(0);
   fill(0);
   strokeWeight(3);
-  stroke(#0DBEFC);
+  stroke(#0DBEFC, 50);
   rect(10,10,width-20, height-20);
-  int add = 10;
-  float add2 = 10;
-  for (int i = 0; i< 21; i++)
+  //int add = 10;
+  //float add2 = 10;
+  
+  /*for (int i = 0; i< 21; i++)
   {
     stroke(#0DBEFC,50);
      line(10, add, width -10, add);
@@ -38,6 +39,15 @@ void Background()
     line(add2, 10, add2, height -10);
     add2 +=51;
   }
+  */
+  
+   for(int Xpos = 20; Xpos < width; Xpos += 100)
+    {
+      for(int Ypos = 20; Ypos < height; Ypos += 100)
+      {
+        rect(Xpos, Ypos, 15 , 15); 
+      }//end Ypos
+    }//end Xpos
 }
 int fade = 255;
 
@@ -75,7 +85,7 @@ void Score()
 {
   fill(255);
   textSize(25);
-  text ("Score : " + int(score), 50, 50);
+  text ("Score : " + int(score), 100, 50);
   noFill();
 }
 
