@@ -7,17 +7,6 @@ class Gates extends GameObject
   PShape shape;
   float radi =30;
   int gateHit = 0;
- 
-  
-  Gates(float x, float y,float size)
-  {
-    GatePos = new PVector(x,y);
-    
-    this.size = size;
-       size = 50;
-    //create();
-  }
-  
  /* void create()
   {
     //shape = createShape(ELLIPSE, 0,0 ,size,size);
@@ -25,12 +14,7 @@ class Gates extends GameObject
  */
   void render()
   {
-      pushMatrix(); // Stores the current transform
-      translate(GatePos.x, GatePos.y);
-      //shape(shape, 0,0);
-      stroke(#0DBEFC,255);
-      ellipse(0,0,size,size);
-      popMatrix(); // Restore the transform
+    
   }
   
   void update()
