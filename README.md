@@ -29,4 +29,14 @@ I began by deciding what game I wanted to make. I choose to try and recreate one
 
 
 #Functionality
+The game works by spawning enemies in the corners at different time intervals. These enemies are pulled towards the position of the player ship. If the enemies hit the player ship it kill the player. Enemies spawn every 5 seconds and them every 10 seconds it adds a new enemy in a new corner of the screen. Once all the corners are spawning enemies it begins to spawn the new enemies, which are faster  in all the corners. This increases the difficulty alot and makes it very hard to survive. The player can also kill the enemies by going through the gates. These gates expand and kill the enemies within the radius of the circle. So the player must dodge the enemies and use the gates to kill the enemies. I used aTan to pull the enemies towards the player but at first I used a processing concept called easing.
+Easing was more difficult for the player as the enemies were a lot faster so I used aTan instead to make it more enjoyable for the user.
+
+#Key Points
+- The program contains multiple classes and uses inheritance across them to prevent replication of code.
+- I use aTan for the enemy movement.
+- I have 3 collision systems.
+- I read the enemies score into a .txt File. ( broken ).
+- I use a GameObjects arraylist to store enemies and gates.
+- 
 
