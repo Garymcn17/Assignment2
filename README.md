@@ -3,6 +3,7 @@
 #Click the picture to watch the video
 
 [![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/z8OSQJh9WI4/0.jpg)](https://www.youtube.com/watch?v=z8OSQJh9WI4)
+- Note - Youtube has changed the lighting on some of my games so it may look different to if ran on processing.
 
 For the assignment brief we were asked to make a game.
 
