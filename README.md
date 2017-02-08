@@ -38,5 +38,6 @@ Easing was more difficult for the player as the enemies were a lot faster so I u
 - I have 3 collision systems.
 - I read the enemies score into a .txt File. ( broken ).
 - I use a GameObjects arraylist to store enemies and gates.
-- 
+
+
 
