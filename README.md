@@ -23,3 +23,10 @@ I began by deciding what game I wanted to make. I choose to try and recreate one
     
     
 #Controls
+- W, A, S, D to control the ship.
+- SPACE to start game.
+- X to exit the game.
+
+
+#Functionality
+
